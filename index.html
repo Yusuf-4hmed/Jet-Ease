@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jet-Ease</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    </style>
+</head>
+<body>
+    <div class="travel-time-container">
+        <div class="departure">
+            <p class="travel-time-header">Departure time</p>
+            <input type="text" name="departure-country-search" class="country-search" id="departure-country-search" placeholder="departure city..">
+            <div class="result-box" id="departure-results-box">
+                <!-- <ul>
+                    <li>Earth/test</li>
+                </ul> -->
+            </div>
+            <p class="time" id="departure-country-time">HH:MM:SS</p>
+            <p class="time-text">(local-time)</p>
+        </div>
+        <div class="travel-time">
+            <p class="travel-time-text">00hours 00mins</p>
+        </div>
+        <div class="departure">
+            <p class="travel-time-header">Arrival time</p>
+            <input type="text" name="arrival-country-search" class="country-search" id="arrival-country-search" placeholder="arrival city..">
+            <div class="result-box" id="arrival-results-box">
+                
+            </div>
+            <p class="time" id="arrival-country-time">HH:MM:SS</p>
+            <p class="time-text">(local-time) ____ hours</p>
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
+</html>

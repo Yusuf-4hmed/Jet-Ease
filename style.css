@@ -1,0 +1,82 @@
+* {
+    font-family: Inter, sans-serif;
+}
+
+html{
+    background-color: black;
+}
+
+.travel-time-container {
+    display: flex;
+    border: 2px solid white;
+    max-width: 900px;
+    height: 400px;
+    border-radius: 14px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.departure {
+    
+    padding: 40px;
+}
+
+.travel-time-header {
+    color: white;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.country-search {
+    width: 263px;
+    height: 37px;
+    font-size: 30px;
+    font-weight: 450;
+    border: none;
+}
+
+.result-box {
+    background-color: white;
+    width: 267px;
+    margin: 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    position: absolute;
+}
+
+.result-box ul {
+    margin: 0px;
+    padding-left: 0px;
+}
+
+.result-box li {
+    list-style: none;
+    padding: 10px 0px 10px 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.result-box ul li:hover {
+    background: rgba(0, 0, 0, 0.139);
+}
+
+.time {
+    color: white;
+    font-size: 57px;
+    margin: 20px 0px 0px 0px;
+}
+
+.time-text {
+    color: white;
+    margin: 0px;
+}
+
+.travel-time {
+    width: 300px;
+}
+
+.travel-time-text {
+    color: white;
+    text-align: center;
+    line-height: 300px;
+}
