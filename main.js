@@ -66,3 +66,27 @@ const selectInputArrival = (item) => {
      arrivalSearchBox.value = item.textContent;
      arrivalResultsBox.innerHTML = ``
 }
+
+// CALCULATE TRAVEL TIME
+
+// convert both departure and arrival times to utc:
+
+const zoneChange = () => {
+    const zoneChangeValues = {
+        "fromTimeZone": arrivalSearchBox.value,
+        "dateTime": "2021-03-14 21:30:00",
+        "toTimeZone": departureSearchBox.value,
+        "dstAmbiguity": ""
+      }
+
+
+    fetch("https://timeapi.io/api/conversion/converttimezone", {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(zoneChangeValues)
+}).then(res => res.json()).then(data => console.log(data))
+}
+
+
