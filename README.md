@@ -11,7 +11,7 @@
 Big plans for this site in the future :)
 
 Some things I am planning to add:
-- [x] Travel time indicator (How long you trip will be..)
+- [x] Travel time calculator (How long you trip will be..)
 - [ ] Gradual sleep shift routine algorithm
 - [ ] Gradual sleep shift routine chart / table
 - [ ] Ability to save routine to calender or to device
