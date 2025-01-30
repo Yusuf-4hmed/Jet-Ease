@@ -23,9 +23,8 @@ input::-webkit-inner-spin-button {
     margin-right: auto;
 }
 
-.departure {
-    
-    padding: 40px;
+.secondary-container {
+    padding: 0px 40px;
 }
 
 .travel-time-header {
@@ -38,14 +37,23 @@ input::-webkit-inner-spin-button {
 .country-search {
     width: 263px;
     height: 37px;
-    font-size: 30px;
-    font-weight: 450;
     border: none;
+    background-color: rgba(114, 125, 161, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.116);
+    border-radius: 10px;
+    color: white;
+    padding: 0px 0px 0px 10px;
+}
+
+.country-search::placeholder {
+    font-size: 15px;
+    opacity: .7;
+    
 }
 
 .result-box {
     background-color: white;
-    width: 267px;
+    width: 273px;
     margin: 0px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -55,12 +63,16 @@ input::-webkit-inner-spin-button {
 .result-box ul {
     margin: 0px;
     padding-left: 0px;
+    background-color: rgba(240, 255, 255, 0.068);
+    max-height: 200px;
+    overflow: auto;
+    overflow-x: hidden;
 }
 
 .result-box li {
     list-style: none;
     padding: 10px 0px 10px 10px;
-    font-size: 20px;
+    font-size: 14.6px;
     cursor: pointer;
 }
 
@@ -84,16 +96,26 @@ input::-webkit-inner-spin-button {
     height: 75px;
     font-size: 45px;
     text-align: center;
+    background-color: rgba(114, 125, 161, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.116);
+    border-radius: 10px;
+    color: white;
 }
 .arrival-time {
     width: 75px;
     height: 75px;
     font-size: 45px;
     text-align: center;
+    background-color: rgba(114, 125, 161, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.116);
+    border-radius: 10px;
+    color: white;
 }
 
 .time-text {
-    color: white;
+    padding-top: 10px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.795);
     margin: 0px;
 }
 
@@ -109,13 +131,55 @@ input::-webkit-inner-spin-button {
 }
 
 .travel-time-button {
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: linear-gradient(353deg, #2293d4 17.51%, #3a4bfd 183.08%);
+    box-shadow: 0px 1px 3px 0px rgba(255, 255, 255, 0.25) inset;
+    height: 50px;
+    font-weight: 600;
+    color: white;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    cursor: pointer;
 }
 
 .error-msg {
     color: white;
     text-align: center;
-    font-size: 1px;
+    font-size: 10px;
+}
+
+@media only screen and (max-width: 805px){
+    .travel-time-container {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    .secondary-container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
+        padding: 0px;
+    }
+    .travel-time {
+        order: 1;
+        padding: 0px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .country-time {
+        justify-content: center;
+    }
+    .country-search {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .travel-time-header {
+        text-align: center;
+    }
+    .time-text {
+        text-align: center;
+    }
 }
