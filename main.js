@@ -1,3 +1,5 @@
+
+// fetching data for the departure and arrival search results
 let availableKeywords;
 
 fetch("https://timeapi.io/api/timezone/availabletimezones")
@@ -9,21 +11,31 @@ fetch("https://timeapi.io/api/timezone/availabletimezones")
 
 // DEPARTURE SEARCH AND RESULTS
 
+// recieves the departure search and results DOM elements
 const departureSearchBox = document.getElementById("departure-country-search")
 const departureResultsBox = document.getElementById("departure-results-box")
-
+// when a keypress is lifted up the function will run
 departureSearchBox.onkeyup = () => {
+    // result is the actual keywords that show up in the results box
+    // input is what the user inputs into the search box
     let result = [];
     let input = departureSearchBox.value;
+    // essentialy this if statement checks if the searchbox has value,
+    // if it does it filters the fetched data from before (availableKeywords)
+    // to only return the keywords that matcch the input
     if (input.length){
         result = availableKeywords.filter((keyword) => {
             return keyword.toLowerCase().replace("_", " ").includes(input.toLowerCase());
         });
         console.log(result)
 }
-display(result)
+display(result) //this is how we display the keywords that match the users input in the
+// results box 
 }
 
+// this is the function that is called above
+// essentialy returns an array of the result items but with a <li> element around it
+// and then adds them to the innerHTML of the results box
 const display = (result) => {
     const content = result.map(item => {
         return "<li onclick=selectInput(this)>" + item + "</li>"
@@ -32,13 +44,15 @@ const display = (result) => {
     departureResultsBox.innerHTML = `<ul>${content.join('')}</ul>`
 }
 
+// in the previous function with the .map() i created <li> elements with the onclick="selectInput(this)"
+// essentialy when you select an item it adds it to the search box
 const selectInput = (item) => {
      departureSearchBox.value = item.textContent;
      departureResultsBox.innerHTML = ``
 }
 
 // ARRIVAL SEARCH AND RESULTS
-
+// basically the same thing as above just for arrival :)
 const arrivalSearchBox = document.getElementById("arrival-country-search")
 const arrivalResultsBox = document.getElementById("arrival-results-box")
 
@@ -68,33 +82,48 @@ const selectInputArrival = (item) => {
 }
 
 // CALCULATE TRAVEL TIME
-
 // converts arrival time to the departure countries timezone:
 
+// recieves the arrival time Hours and Minutes DOM elements
 const arrivalTimeHH = document.getElementById("arrival-time-hh")
 const arrivalTimeMM = document.getElementById("arrival-time-mm")
 
+// the first step to calculate travel time is to convert the arrival
+// countries timeZone to the departure countries timezone
 const zoneChange = () => {
 
+// receives all input elements in the DOM
 const allInputs = document.querySelectorAll("input");
+// sets default value of allInputsHaveValue to true
 let allInputsHaveValue = true;
-
+// if one input elements does not have a value then allInputsHaveValue is false
 allInputs.forEach((input) => {
     if (!input.value) {
         allInputsHaveValue = false;
     }
 });
-
+// receieves the error-msg text <p></p> element
 const errorMsg = document.getElementById("error-msg");
+// sets a new variable with an empty string
 let arrivalTimeConverted = " ";
 
-
+// once its established that all the input elements have a value i will
+// begin to convert the arrival time to the timezone of the departure time country
 if (allInputsHaveValue){
+    // receives the departure departure time Hours and Minutes DOM Elements
+    // and sets a variable joinging the Hours and Minutes (HH::MM)
     const departureTimeHH = document.getElementById("departure-time-hh");
     const departureTimeMM = document.getElementById("departure-time-mm");
     let departureTime = `${departureTimeHH.value}:${departureTimeMM.value}`;
 
+    // now fortunately the API im using has a post method that converts one timezone
+    // into another so I use this
 
+    // sets a variable method with an object format the API accepts (i read the API doc)
+    // it uses template literals
+    // it converts the "fromTimeZone"'s timeZone into the "toTimeZone"'s timeZone
+    // "dateTime" is the time you want to convert from. i feel like i should change the 2021 part
+    // but it doesnt really affect the user experience :/
    const zoneChangeValues = {
         "fromTimeZone": arrivalSearchBox.value,
         "dateTime": `2021-03-14 ${arrivalTimeHH.value}:${arrivalTimeMM.value}:00`,
@@ -102,7 +131,8 @@ if (allInputsHaveValue){
         "dstAmbiguity": ""
       }
 
-
+    //   with this fetch method it basically sends the zoneChangeValues variable via a POST method
+    //  then it receives it converted and puts it in a variable called arrivalTimeConverted
     fetch("https://timeapi.io/api/conversion/converttimezone", {
     method: 'POST',
     headers: {
@@ -113,16 +143,17 @@ if (allInputsHaveValue){
     arrivalTimeConverted = `${data.conversionResult.hour}:${data.conversionResult.minute}`;
     // console logs the arrival time in the same time zone as the departure 
     console.log("arrival time in departure times timezone " + arrivalTimeConverted);
-    
+    // it then calculates how long your are traveling, the name calculateFlightDuration wasnt the best
+    // choice of words tbh
     calculateFlightDuration(departureTime, arrivalTimeConverted);
 }) 
     console.log("departure time " + departureTime);
-
+// removes the error text as the function has gone through as intended
     errorMsg.innerText = ``
-    // FINDNIG THE DIFFERENCE BETWEEN THE ARRIVAL TIME(same timezone and departure)
-// AND THE DEPARTURE TIME
 
 
+// now that the arrival time has been matched to the time zone of the departure time
+// i can now find the difference between the two and I will have the total travel time
 const calculateFlightDuration = (departureTime, arrivalTimeConverted) => {
     // seperate the departure and arrival times into their hours and minutes
     const [depHours, depMinutes] = departureTime.trim().split(":").map(Number);
@@ -137,6 +168,7 @@ const calculateFlightDuration = (departureTime, arrivalTimeConverted) => {
         arrTotalMinutes >= depTotalMinutes ?
             arrTotalMinutes - depTotalMinutes:
             arrTotalMinutes + 1440 - depTotalMinutes;
+            // 1440 is 24 hours btw
     
     
     // now i need to convert the difference in minutes back to hours and minutes
@@ -153,6 +185,7 @@ const calculateFlightDuration = (departureTime, arrivalTimeConverted) => {
 }
 
 }
+
 
 
 
