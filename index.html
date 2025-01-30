@@ -25,8 +25,9 @@
         </div>
 
         <div class="travel-time">
-            <p class="travel-time-text">00hours 00mins</p>
-            <button id="travel-time-button" onclick="">GET TRAVEL TIME</button>
+            <p class="travel-time-text" id="travel-time-text"></p>
+            <button id="travel-time-button" class="travel-time-button" onclick="zoneChange()">GET TRAVEL TIME</button>
+            <p class="error-msg" id="error-msg"></p>
         </div>
 
         <div class="departure">
@@ -35,9 +36,9 @@
             <div class="result-box" id="arrival-results-box">
             </div>
             <div class="country-time">
-                <input type="number" name="departure-time-hh" class="departure-time" id="departure-time-hh" min=0 max=24 placeholder="HH">
+                <input type="number" name="arrival-time-hh" class="arrival-time" id="arrival-time-hh" min=0 max=24 placeholder="HH">
                 <p class="colon">:</p>
-                <input type="number" name="departure-time-mm" class="departure-time" id="departure-time-mm" min=0 max=60 placeholder="MM">
+                <input type="number" name="arrival-time-mm" class="arrival-time" id="arrival-time-mm" min=0 max=60 placeholder="MM">
             </div>
             <p class="time-text">(local-time) ____ hours</p>
         </div>

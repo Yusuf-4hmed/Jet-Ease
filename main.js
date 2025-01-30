@@ -69,12 +69,35 @@ const selectInputArrival = (item) => {
 
 // CALCULATE TRAVEL TIME
 
-// convert both departure and arrival times to utc:
+// converts arrival time to the departure countries timezone:
+
+const arrivalTimeHH = document.getElementById("arrival-time-hh")
+const arrivalTimeMM = document.getElementById("arrival-time-mm")
 
 const zoneChange = () => {
-    const zoneChangeValues = {
+
+const allInputs = document.querySelectorAll("input");
+let allInputsHaveValue = true;
+
+allInputs.forEach((input) => {
+    if (!input.value) {
+        allInputsHaveValue = false;
+    }
+});
+
+const errorMsg = document.getElementById("error-msg");
+let arrivalTimeConverted = " ";
+
+
+if (allInputsHaveValue){
+    const departureTimeHH = document.getElementById("departure-time-hh");
+    const departureTimeMM = document.getElementById("departure-time-mm");
+    let departureTime = `${departureTimeHH.value}:${departureTimeMM.value}`;
+
+
+   const zoneChangeValues = {
         "fromTimeZone": arrivalSearchBox.value,
-        "dateTime": "2021-03-14 21:30:00",
+        "dateTime": `2021-03-14 ${arrivalTimeHH.value}:${arrivalTimeMM.value}:00`,
         "toTimeZone": departureSearchBox.value,
         "dstAmbiguity": ""
       }
@@ -86,7 +109,50 @@ const zoneChange = () => {
         'Content-Type': 'application/json'
     },
     body: JSON.stringify(zoneChangeValues)
-}).then(res => res.json()).then(data => console.log(data))
+}).then(res => res.json()).then(data => {
+    arrivalTimeConverted = `${data.conversionResult.hour}:${data.conversionResult.minute}`;
+    // console logs the arrival time in the same time zone as the departure 
+    console.log("arrival time in departure times timezone " + arrivalTimeConverted);
+    
+    calculateFlightDuration(departureTime, arrivalTimeConverted);
+}) 
+    console.log("departure time " + departureTime);
+
+    errorMsg.innerText = ``
+    // FINDNIG THE DIFFERENCE BETWEEN THE ARRIVAL TIME(same timezone and departure)
+// AND THE DEPARTURE TIME
+
+
+const calculateFlightDuration = (departureTime, arrivalTimeConverted) => {
+    // seperate the departure and arrival times into their hours and minutes
+    const [depHours, depMinutes] = departureTime.trim().split(":").map(Number);
+    const [arrHours, arrMinutes] = arrivalTimeConverted.trim().split(":").map(Number);
+    // then i want to convert the how many minutes make up the
+    // departure time and arrival time
+    const depTotalMinutes = depHours * 60 + depMinutes;
+    const arrTotalMinutes = arrHours * 60 + arrMinutes;
+    // now i want to adjust for a next day possibility and find calculate
+    // the difference
+    const totalMinutesDifference =
+        arrTotalMinutes >= depTotalMinutes ?
+            arrTotalMinutes - depTotalMinutes:
+            arrTotalMinutes + 1440 - depTotalMinutes;
+    
+    
+    // now i need to convert the difference in minutes back to hours and minutes
+    const diffHours = Math.floor(totalMinutesDifference / 60);
+    const diffMinutes = totalMinutesDifference % 60;
+
+    // now i want to show the result on screen
+    const travelTime = document.getElementById("travel-time-text");
+    travelTime.innerText =`${diffHours} hours and ${diffMinutes} minutes`
 }
+
+} else {
+    errorMsg.innerText = `Please fill out all fields`
+}
+
+}
+
 
 

@@ -84,6 +84,12 @@ input::-webkit-inner-spin-button {
     font-size: 45px;
     text-align: center;
 }
+.arrival-time {
+    width: 75px;
+    height: 75px;
+    font-size: 45px;
+    text-align: center;
+}
 
 .time-text {
     color: white;
@@ -92,10 +98,23 @@ input::-webkit-inner-spin-button {
 
 .travel-time {
     width: 300px;
+    padding-top: 160px;
 }
 
 .travel-time-text {
     color: white;
     text-align: center;
     
+}
+
+.travel-time-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.error-msg {
+    color: white;
+    text-align: center;
+    font-size: 12px;
 }
