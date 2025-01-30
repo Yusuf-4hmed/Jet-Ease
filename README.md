@@ -6,7 +6,7 @@
   </p>
 </div>
 
-<a href="" target="_blank">Site Link</a>
+<a href="https://yusuf-4hmed.github.io/Jet-Ease/" target="_blank">Site Link</a>
 
 Big plans for this site in the future :)
 
