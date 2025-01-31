@@ -10,7 +10,11 @@
     </style>
 </head>
 <body>
-    <div class="travel-time-container">
+    <div class="travel-time-container-toggle" id="travel-time-container-toggle">
+        <p class="travel-time-container-closed-header">Travel Time Calculator</p>
+        <ion-icon id="travel-time-container-ion" name="chevron-down"></ion-icon>
+    </div>
+    <div class="travel-time-container" id="travel-time-container">
         <div class="secondary-container">
             <p class="travel-time-header">Departure time</p>
             <input type="text" name="departure-country-search" class="country-search" id="departure-country-search" placeholder=" departure city..">
@@ -43,6 +47,8 @@
             <p class="time-text">(local-time) ____ hours</p>
         </div>
     </div>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 <script src="main.js"></script>
 </html>

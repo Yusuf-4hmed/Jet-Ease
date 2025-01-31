@@ -186,6 +186,21 @@ const calculateFlightDuration = (departureTime, arrivalTimeConverted) => {
 
 }
 
+// TRAVEL TIME CALCULATOR TOGGLE
 
+const travelTimeContainerIon = document.getElementById("travel-time-container-ion");
+const travelTimeContainerToggle = document.getElementById("travel-time-container-toggle");
+const travelTimeContainer = document.getElementById("travel-time-container");
+
+travelTimeContainerToggle.addEventListener("click", () => {
+    if (travelTimeContainer.style.display === "flex"){
+        travelTimeContainer.style.display = "none"
+        travelTimeContainerIon.style.transform = "rotate(90deg)"
+    } else {
+        travelTimeContainer.style.display = "flex"
+        travelTimeContainerIon.style.transform = "rotate(0deg)"
+    }
+    
+})
 
 

@@ -12,6 +12,41 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+/* TRAVEL TIME CONTAINER CLOSED */
+
+.travel-time-container-toggle {
+    display: flex;
+    border: 1px solid rgba(255, 255, 255, 0.116);
+    background-color: rgba(15, 16, 26, 0.452);
+    max-width: 900px;
+    height: 100px;
+    border-radius: 14px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 7px;
+    cursor: pointer;
+}
+
+.travel-time-container-toggle ion-icon {
+   color: white;
+   font-size: 30px;
+   margin-top: auto;
+   margin-bottom: auto;
+   margin-left: auto;
+   margin-right: 20px;
+   transform: rotate(90deg);
+}
+
+.travel-time-container-closed-header {
+    color: white;
+    font-size: 40px;
+    font-weight: 600;
+    height: 70px;
+    padding-left: 20px;
+    margin: 25px 0px 0px 0px;
+}
+
+/* TRAVEL TIME CONTAINER */
 .travel-time-container {
     display: flex;
     border: 1px solid rgba(255, 255, 255, 0.116);
@@ -181,5 +216,11 @@ input::-webkit-inner-spin-button {
     }
     .time-text {
         text-align: center;
+    }
+}
+
+@media only screen and (max-width: 492px) {
+    .travel-time-container-toggle {
+        height: 140px;
     }
 }
