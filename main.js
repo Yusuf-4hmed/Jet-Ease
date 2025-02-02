@@ -178,16 +178,25 @@ const calculateFlightDuration = (departureTime, arrivalTimeConverted) => {
     // now i want to show the result on screen
     const travelTime = document.getElementById("travel-time-text");
     travelTime.innerText =`${diffHours} hours and ${diffMinutes} minutes`
+    
+    // show tool container
+    toolsContainer.style.display = "flex"
 }
 
 } else {
     errorMsg.innerText = `Please fill out all fields`
+    
+    
 }
 
 }
+
+const toolsContainer = document.getElementById("tools-container")
+const confirmBtn = document.getElementById("confirm-button")
 
 // TRAVEL TIME CALCULATOR TOGGLE
 
+// retreive the travelTimeContainer toggle elements from dom
 const travelTimeContainerIon = document.getElementById("travel-time-container-ion");
 const travelTimeContainerToggle = document.getElementById("travel-time-container-toggle");
 const travelTimeContainer = document.getElementById("travel-time-container");
@@ -202,5 +211,6 @@ travelTimeContainerToggle.addEventListener("click", () => {
     }
     
 })
+
 
 
