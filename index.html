@@ -10,66 +10,68 @@
     </style>
 </head>
 <body>
-    <!-- <div class="container-toggle" id="travel-time-container-toggle">
-        <p class="container-closed-header">Travel Time Calculator</p>
-        <ion-icon id="travel-time-container-ion" name="chevron-down"></ion-icon>
-    </div> -->
-<div class="main-information-container">
-        <p class="main-header">Please enter your flight information</p>
     
-    <div class="travel-time-container" id="travel-time-container">
-
+<div class="main-information-container" id="main-information-form-container">
+        <p class="main-header">Please enter your flight information</p>
+    <form class="main-information-form" id="main-information-form">
         <div class="secondary-container">
-            <p class="travel-time-header">Departure city</p>
+            <p class="main-information-form-header">Departure city</p>
                 <input type="text" name="departure-country-search" class="country-search" id="departure-country-search" placeholder="city of departure..">
                 <div class="result-box" id="departure-results-box">
     
                 </div>
-                <p class="travel-time-header">Time of departure</p>
+                <p class="main-information-form-header">Time of departure</p>
             <div class="country-time">
-                    <input type="number" name="departure-time-hh" class="departure-time" id="departure-time-hh" min=0 max=24 placeholder="HH">
+                    <input type="number" name="departure-time-hh" class="departure-time" id="departure-time-hh" min="0" max="23" placeholder="HH">
                     <p class="colon">:</p>
-                    <input type="number" name="departure-time-mm" class="departure-time" id="departure-time-mm" min=0 max=60 placeholder="MM">
+                    <input type="number" name="departure-time-mm" class="departure-time" id="departure-time-mm" min="0" max="59" placeholder="MM">
             </div>
         </div>
-
-        <!-- <div class="travel-time">
-            <p class="travel-time-text" id="travel-time-text"></p>
-            <button id="travel-time-button" class="travel-time-button" onclick="zoneChange()">Get travel time</button>
-            <p class="error-msg" id="error-msg"></p>
-        </div> -->
-
         <div class="secondary-container">
-            <p class="travel-time-header">Arrival city</p>
+            <p class="main-information-form-header">Arrival city</p>
                 <input type="text" name="arrival-country-search" class="country-search" id="arrival-country-search" placeholder="city of arrival..">
                 <div class="result-box" id="arrival-results-box">
 
                 </div>
-                <p class="travel-time-header">Time of arrival</p>
+                <p class="main-information-form-header">Time of arrival</p>
             <div class="country-time">
-                <input type="number" name="arrival-time-hh" class="arrival-time" id="arrival-time-hh" min=0 max=24 placeholder="HH">
+                <input type="number" name="arrival-time-hh" class="arrival-time" id="arrival-time-hh" min="0" max="23" placeholder="HH">
                 <p class="colon">:</p>
-                <input type="number" name="arrival-time-mm" class="arrival-time" id="arrival-time-mm" min="0" max="60" placeholder="MM">
+                <input type="number" name="arrival-time-mm" class="arrival-time" id="arrival-time-mm" min="0" max="59" placeholder="MM">
             </div>
         </div>
-
-        
-
-    </div>
-    <button id="travel-time-button" class="travel-time-button" onclick="zoneChange()">Get results</button>
+    </form>
+        <button id="travel-time-button" class="travel-time-button" onclick="zoneChange()">Get results</button>
         <p class="error-msg" id="error-msg"></p>
 </div>
 
 <div class="tools-container" id="tools-container">
     <div class="travel-time">
-        <p class="travel-time-header">Total travel</p>
-        <p class="travel-time-text" id="travel-time-text">0 hours and 0 minutes</p>
-        <p class="travel-time-text-explanation">The total time from taking off to landing in your destination. <br>Not neccessarily the time in the air (you may have a connect flight so this total time includes stop overs)</p>
+        <p class="tools-header">Total travel</p>
+        <p class="tools-text" id="travel-time-text">0 hours and 0 minutes</p>
+        <p class="tools-text-description">The total time from taking off to landing in your destination. <br>Not neccessarily the time in the air (you may have a connect flight so this total time includes stop overs)</p>
     </div>
     <div class="sleep-schedule">
-        
+        <p class="tools-header">Gradual Sleep Shift</p>
+        <div class="sleep-time-container">
+            <p class="tools-text">Desired sleep time</p>
+                <div class="wake-sleep">
+                    <input type="number" name="sleep-time-hh" class="sleep-time" id="sleep-time-hh" min="0" max="23" placeholder="HH">
+                <p class="colon">:</p>
+                <input type="number" name="sleep-time-mm" class="sleep-time" id="sleep-time-mm" min="0" max="59" placeholder="MM">
+                </div>
+        </div>
+        <div class="sleep-time-container">
+            <p class="tools-text">Desired sleep time</p>
+                <div class="wake-sleep">
+                    <input type="number" name="sleep-time-hh" class="sleep-time" id="sleep-time-hh" min="0" max="23" placeholder="HH">
+                <p class="colon">:</p>
+                <input type="number" name="sleep-time-mm" class="sleep-time" id="sleep-time-mm" min="0" max="59" placeholder="MM">
+                </div>
+        </div>
+        <p class="tools-text-description">Using your desired sleep and wake times, we can generate you a schedule to follow before your trip so you can avoid jet lag.</p>
     </div>
-    <div class="test">sdfsdfasdfadfds</div>
+    
 </div>
     
 

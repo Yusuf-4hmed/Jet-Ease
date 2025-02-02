@@ -12,40 +12,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-/* TRAVEL TIME CONTAINER TOGGLE */
-
-.container-toggle {
-    display: flex;
-    border: 1px solid rgba(255, 255, 255, 0.116);
-    background-color: rgba(15, 16, 26, 0.452);
-    max-width: 900px;
-    min-height: 100px;
-    border-radius: 14px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 7px;
-    margin-top: 14px;
-    cursor: pointer;
-}
-
-.container-toggle ion-icon {
-   color: white;
-   font-size: 30px;
-   margin-top: auto;
-   margin-bottom: auto;
-   margin-left: auto;
-   margin-right: 20px;
-}
-
-.container-closed-header {
-    color: white;
-    font-size: 40px;
-    font-weight: 600;
-    height: 70px;
-    padding-left: 20px;
-    margin: 25px 0px 0px 0px;
-}
-
+/* MAIN INFORMATION CONTAINER */
 
 .main-information-container {
     
@@ -58,7 +25,7 @@ input::-webkit-inner-spin-button {
     margin-right: auto;
 }
 
-.travel-time-container {
+.main-information-form {
     display: flex;
     justify-content: center;
 }
@@ -77,11 +44,14 @@ input::-webkit-inner-spin-button {
     padding: 0px 40px;
 }
 
-.travel-time-header {
+.main-information-form-header {
+    text-align: center;
+    font-size: 19px;
+    font-weight: 600;
+    margin: 20px 0px;
     color: white;
-    font-size: 16px;
-    
 }
+
 
 .country-search {
     width: 263px;
@@ -136,7 +106,7 @@ input::-webkit-inner-spin-button {
 
 .colon {
     color: white;
-    font-size: 57px;
+    font-size: 50px;
     margin: 0px 10px 0px 10px;
 }
 
@@ -168,21 +138,13 @@ input::-webkit-inner-spin-button {
     margin: 0px;
 }
 
-
-.confirm-button {
-    width: 100px;
-    height: 30px;
-    border-radius: 7px;
-    float: right;
-    margin: 13px 34px;
-    cursor: pointer;
-    border: none;
-}
+/* TOOLS CONTAINER */
 
 .tools-container {
     margin-top: 20px;
     /* border: 1px solid rgba(255, 255, 255, 0.116); */
-    display: none; /* should be none*/
+    display: flex;
+    opacity: 0.3;
     flex-wrap: wrap;
     max-width: 700px;
     height: 380px;
@@ -192,7 +154,8 @@ input::-webkit-inner-spin-button {
     gap: 5%;
 }
 
-.travel-time-header {
+.tools-header {
+    color: white;
     text-align: center;
     font-size: 19px;
     font-weight: 600;
@@ -208,20 +171,19 @@ input::-webkit-inner-spin-button {
     border-radius: 14px;
 }
 
-.travel-time-text {
+.tools-text {
     color: white;
     text-align: center;
     margin-top: 10px;
     
 }
 
-.travel-time-text-explanation {
+.tools-text-description {
     color: white;
     text-align: center;
     font-size: 12px;
     opacity: 0.7;
     font-weight: 300;
-    
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
@@ -252,10 +214,26 @@ input::-webkit-inner-spin-button {
     border-radius: 14px;
 }
 
-.test {
-    border: 1px solid rgba(255, 255, 255, 0.116);
-    width: 50%;
+.sleep-time-container {
+    padding:  0px 20px;
 }
+
+.wake-sleep {
+    display: flex;
+}
+
+.sleep-time {
+    width: 70px;
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+    background-color: rgba(114, 125, 161, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.116);
+    border-radius: 10px;
+    color: white;
+}
+
+/* MEDIA QUERIES */
 
 @media only screen and (max-width: 805px){
     

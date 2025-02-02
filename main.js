@@ -93,7 +93,8 @@ const arrivalTimeMM = document.getElementById("arrival-time-mm")
 const zoneChange = () => {
 
 // receives all input elements in the DOM
-const allInputs = document.querySelectorAll("input");
+const mainFormContainer = document.getElementById("main-information-form-container")
+const allInputs = mainFormContainer.querySelectorAll("input");
 // sets default value of allInputsHaveValue to true
 let allInputsHaveValue = true;
 // if one input elements does not have a value then allInputsHaveValue is false
@@ -180,7 +181,7 @@ const calculateFlightDuration = (departureTime, arrivalTimeConverted) => {
     travelTime.innerText =`${diffHours} hours and ${diffMinutes} minutes`
     
     // show tool container
-    toolsContainer.style.display = "flex"
+    toolsContainer.style.opacity = "1"
 }
 
 } else {
@@ -194,23 +195,7 @@ const calculateFlightDuration = (departureTime, arrivalTimeConverted) => {
 const toolsContainer = document.getElementById("tools-container")
 const confirmBtn = document.getElementById("confirm-button")
 
-// TRAVEL TIME CALCULATOR TOGGLE
 
-// retreive the travelTimeContainer toggle elements from dom
-const travelTimeContainerIon = document.getElementById("travel-time-container-ion");
-const travelTimeContainerToggle = document.getElementById("travel-time-container-toggle");
-const travelTimeContainer = document.getElementById("travel-time-container");
-
-travelTimeContainerToggle.addEventListener("click", () => {
-    if (travelTimeContainer.style.display === "flex"){
-        travelTimeContainer.style.display = "none"
-        travelTimeContainerIon.style.transform = "rotate(90deg)"
-    } else {
-        travelTimeContainer.style.display = "flex"
-        travelTimeContainerIon.style.transform = "rotate(0deg)"
-    }
-    
-})
 
 
 
