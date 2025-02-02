@@ -195,7 +195,7 @@ const calculateFlightDuration = (departureTime, arrivalTimeConverted) => {
 const toolsContainer = document.getElementById("tools-container")
 const confirmBtn = document.getElementById("confirm-button")
 
-
+// test
 
 
 
