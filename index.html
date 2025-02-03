@@ -49,10 +49,11 @@
     <div class="travel-time">
         <p class="tools-header">Total travel</p>
         <p class="tools-text" id="travel-time-text">0 hours and 0 minutes</p>
-        <p class="tools-text-description">The total time from taking off to landing in your destination. <br>Not neccessarily the time in the air (you may have a connect flight so this total time includes stop overs)</p>
+        <p class="tools-text-description">The total time from taking off to landing in your destination. Not neccessarily the time in the air (you may have a connect flight so this total time includes stop overs)</p>
     </div>
     <div class="sleep-schedule">
         <p class="tools-header">Gradual Sleep Shift</p>
+    <div class="sleep-time-main-container">
         <div class="sleep-time-container">
             <p class="tools-text">Desired sleep time</p>
                 <div class="wake-sleep">
@@ -62,13 +63,16 @@
                 </div>
         </div>
         <div class="sleep-time-container">
-            <p class="tools-text">Desired sleep time</p>
+            <p class="tools-text">Desired wake time</p>
                 <div class="wake-sleep">
                     <input type="number" name="sleep-time-hh" class="sleep-time" id="sleep-time-hh" min="0" max="23" placeholder="HH">
                 <p class="colon">:</p>
                 <input type="number" name="sleep-time-mm" class="sleep-time" id="sleep-time-mm" min="0" max="59" placeholder="MM">
                 </div>
         </div>
+        
+    </div>
+
         <p class="tools-text-description">Using your desired sleep and wake times, we can generate you a schedule to follow before your trip so you can avoid jet lag.</p>
     </div>
     
