@@ -221,7 +221,7 @@ const timeDifference = () => {
         if (timeDifference > 0){
             hourDifference.innerText = `${arrPartTwo} is ${timeDifference} hours ahead from ${depPartTwo}!`;
         } else {
-            hourDifference.innerText = `${arrPartTwo} is ${timeDifference} behind ahead from ${depPartTwo}!`;
+            hourDifference.innerText = `${arrPartTwo} is ${timeDifference} behind from ${depPartTwo}!`;
         }
     })
 }
