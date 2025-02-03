@@ -147,6 +147,7 @@ if (allInputsHaveValue){
     // it then calculates how long your are traveling, the name calculateFlightDuration wasnt the best
     // choice of words tbh
     calculateFlightDuration(departureTime, arrivalTimeConverted);
+    timeDifference();
 }) 
     console.log("departure time " + departureTime);
 // removes the error text as the function has gone through as intended
@@ -211,6 +212,7 @@ const timeDifference = () => {
     })
     let timeDifference;
     let arrTimeLive;
+    const hourDifference = document.getElementById("hour-difference");
     fetch(`https://timeapi.io/api/time/current/zone?timeZone=${arrPartOne}%2F${arrPartTwo}`)
     .then(res => res.json())
     .then(data => {
@@ -218,9 +220,9 @@ const timeDifference = () => {
         console.log(arrTimeLive)
         timeDifference = parseInt(arrTimeLive) - parseInt(depTimeLive);
         if (timeDifference > 0){
-            console.log(timeDifference + " hours ahead!")
+            hourDifference.innerText = `${arrPartTwo} is ${timeDifference} hours ahead from ${depPartTwo}!`;
         } else {
-            console.log(timeDifference + " hours behind!")
+            hourDifference.innerText = `${arrPartTwo} is ${timeDifference} behind ahead from ${depPartTwo}!`;
         }
     })
     
