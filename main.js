@@ -5,9 +5,8 @@ let availableKeywords;
 fetch("https://timeapi.io/api/timezone/availabletimezones")
 .then(res => res.json())
 .then(data => {
-    availableKeywords = data
-    console.log(availableKeywords)
-})
+    availableKeywords = data;
+}).catch(error => console.log('ERROR'))
 
 // DEPARTURE SEARCH AND RESULTS
 
@@ -225,7 +224,4 @@ const timeDifference = () => {
             hourDifference.innerText = `${arrPartTwo} is ${timeDifference} behind ahead from ${depPartTwo}!`;
         }
     })
-    
-
-
 }

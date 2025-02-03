@@ -323,8 +323,10 @@ input::-webkit-inner-spin-button {
         width: 100%;
         margin-bottom: 10px;
     }
-
     .sleep-schedule {
         width: 100%;
+    }
+    .main-header {
+        font-size: 27px;
     }
 }
