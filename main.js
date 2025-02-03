@@ -195,7 +195,35 @@ const calculateFlightDuration = (departureTime, arrivalTimeConverted) => {
 const toolsContainer = document.getElementById("tools-container")
 const confirmBtn = document.getElementById("confirm-button")
 
-// test
+// FIND TIME DIFFERENCE
+
+const timeDifference = () => {
+
+    const [depPartOne, depPartTwo] = departureSearchBox.value.split("/");
+    const [arrPartOne, arrPartTwo] = arrivalSearchBox.value.split("/");
+
+    let depTimeLive;
+    fetch(`https://timeapi.io/api/time/current/zone?timeZone=${depPartOne}%2F${depPartTwo}`)
+    .then(res => res.json())
+    .then(data => {
+        depTimeLive = data.time;
+        console.log(depTimeLive)
+    })
+    let timeDifference;
+    let arrTimeLive;
+    fetch(`https://timeapi.io/api/time/current/zone?timeZone=${arrPartOne}%2F${arrPartTwo}`)
+    .then(res => res.json())
+    .then(data => {
+        arrTimeLive = data.time;
+        console.log(arrTimeLive)
+        timeDifference = parseInt(arrTimeLive) - parseInt(depTimeLive);
+        if (timeDifference > 0){
+            console.log(timeDifference + " hours ahead!")
+        } else {
+            console.log(timeDifference + " hours behind!")
+        }
+    })
+    
 
 
-
+}
