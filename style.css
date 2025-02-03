@@ -147,7 +147,7 @@ input::-webkit-inner-spin-button {
     /* opacity: 0.3; */
     flex-wrap: wrap;
     max-width: 700px;
-    height: 380px;
+    height: auto;
     border-radius: 14px;
     margin-left: auto;
     margin-right: auto;
@@ -168,7 +168,7 @@ input::-webkit-inner-spin-button {
     border: 1px solid rgba(255, 255, 255, 0.116);
     background-color: rgba(15, 16, 26, 0.452);
     max-width: 700px;
-    height: 240px;
+    min-height: 100%;
     border-radius: 14px;
 }
 .travel-time .tools-text {
@@ -215,7 +215,7 @@ input::-webkit-inner-spin-button {
     border: 1px solid rgba(255, 255, 255, 0.116);
     background-color: rgba(15, 16, 26, 0.452);
     max-width: 700px;
-    height: 240px;
+    min-height: 100%;
     border-radius: 14px;
 }
 
@@ -254,10 +254,77 @@ input::-webkit-inner-spin-button {
 
 /* MEDIA QUERIES */
 
-@media only screen and (max-width: 805px){
+@media only screen and (max-width: 710px){
+    .secondary-container {
+        width: 170px;
+        padding: 0px;
+    }
     
+    .country-search {
+        width: 135px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .country-search::placeholder {
+        font-size: 12px;
+        opacity: .7;
+        
+    }
+    .result-box {
+        background-color: white;
+        width: 145px;
+        margin: 0px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        position: absolute;
+    }
+    .country-time {
+        justify-content: center;
+    }
+    .departure-time {
+        width: 53px;
+        height: 53px;
+        font-size: 20px;
+    }
+    .arrival-time {
+        width: 53px;
+        height: 53px;
+        font-size: 20px;
+    }
+    .main-information-form-header {
+        font-size: 17px;
+    }
+    .main-header {
+        color: white;
+        font-size: 40px;
+        font-weight: 600;
+        height: 70px;
+        margin: 0px;
+        text-align: center;
+        padding: 15px 15px;
+    }
+    .travel-time-button {
+        width: 100px;
+        height: 30px;
+        border-radius: 7px;
+        float: right;
+        margin: 13px 34px;
+        cursor: pointer;
+        border: none;
+    }
 }
 
-@media only screen and (max-width: 492px) {
-    
+@media only screen and (max-width: 412px) {
+    .tools-container {
+        display: block;
+    }
+    .travel-time {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .sleep-schedule {
+        width: 100%;
+    }
 }
