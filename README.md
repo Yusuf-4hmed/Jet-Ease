@@ -1,7 +1,7 @@
   <h3 align="center">Jet Ease ✈️</h3>
 
   <p align="center">
-    Web app that allows users to generate a "gradual sleep shift" routine that allows them to avoid / reduce affects of jet lag.
+    Web app that provides tools for people travelling to a different part of the world.
     <br />
   </p>
 </div>
@@ -12,7 +12,7 @@ Big plans for this site in the future :)
 
 Some things I am planning to add:
 - [x] Travel time calculator (How long you trip will be..)
-- [ ] Gradual sleep shift routine algorithm
+- [x] Time difference (difference between departing country and destination country)
 - [ ] Gradual sleep shift routine chart / table
 - [ ] Ability to save routine to calender or to device
 
