@@ -2,10 +2,13 @@
 // fetching data for the departure and arrival search results
 let availableKeywords;
 
+const loadingScreen = document.getElementById("loading-screen")
 fetch("https://timeapi.io/api/timezone/availabletimezones")
 .then(res => res.json())
 .then(data => {
     availableKeywords = data;
+    console.log(`main data fetched.`);
+    loadingScreen.style.display = "none";
 }).catch(error => console.log('ERROR'))
 
 // DEPARTURE SEARCH AND RESULTS

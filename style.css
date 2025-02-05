@@ -15,7 +15,7 @@ input::-webkit-inner-spin-button {
 /* MAIN INFORMATION CONTAINER */
 
 .main-information-container {
-    
+    margin-top: 10px;
     border: 1px solid rgba(255, 255, 255, 0.116);
     background-color: rgba(15, 16, 26, 0.452);
     max-width: 700px;
@@ -250,6 +250,27 @@ input::-webkit-inner-spin-button {
     border: 1px solid rgba(255, 255, 255, 0.116);
     border-radius: 10px;
     color: white;
+}
+
+/* LOADING SCREEN */
+
+.loading-screen {
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-screen .main-header {
+    text-align: center;
+}
+
+html, body {
+    margin: 0;
 }
 
 /* MEDIA QUERIES */
