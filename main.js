@@ -198,30 +198,51 @@ const confirmBtn = document.getElementById("confirm-button")
 // FIND TIME DIFFERENCE
 
 const timeDifference = () => {
-
+    // retreives the countries from the search box
     const [depPartOne, depPartTwo] = departureSearchBox.value.split("/");
     const [arrPartOne, arrPartTwo] = arrivalSearchBox.value.split("/");
 
+    // gets the live time of departure country
     let depTimeLive;
     fetch(`https://timeapi.io/api/time/current/zone?timeZone=${depPartOne}%2F${depPartTwo}`)
     .then(res => res.json())
     .then(data => {
         depTimeLive = data.time;
-        console.log(depTimeLive)
+        console.log(`live time in deparuture country: ${depTimeLive}`)
     })
     let timeDifference;
     let arrTimeLive;
     const hourDifference = document.getElementById("hour-difference");
+    
+    // gets the live time of arrival country
     fetch(`https://timeapi.io/api/time/current/zone?timeZone=${arrPartOne}%2F${arrPartTwo}`)
     .then(res => res.json())
     .then(data => {
         arrTimeLive = data.time;
-        console.log(arrTimeLive)
-        timeDifference = parseInt(arrTimeLive) - parseInt(depTimeLive);
-        if (timeDifference > 0){
-            hourDifference.innerText = `${arrPartTwo} is ${timeDifference} hours ahead from ${depPartTwo}!`;
-        } else {
-            hourDifference.innerText = `${arrPartTwo} is ${timeDifference} behind from ${depPartTwo}!`;
-        }
+        console.log(`live time in arrival country: ${arrTimeLive}`)
+        
+    // seperate the departure and arrival times into their hours and minutes
+    const [depHours, depMinutes] = depTimeLive.trim().split(":").map(Number);
+    const [arrHours, arrMinutes] = arrTimeLive.trim().split(":").map(Number);
+    // then i want to convert the how many minutes make up the
+    // departure time and arrival time
+    const depTotalMinutes = depHours * 60 + depMinutes;
+    const arrTotalMinutes = arrHours * 60 + arrMinutes;
+    // now i want to adjust for a next day possibility and find calculate
+    // the difference
+    const totalMinutesDifference =
+        arrTotalMinutes >= depTotalMinutes ?
+            arrTotalMinutes - depTotalMinutes:
+            arrTotalMinutes + 1440 - depTotalMinutes;
+            // 1440 is 24 hours btw
+    
+    
+    // now i need to convert the difference in minutes back to hours and minutes
+    const diffHours = Math.floor(totalMinutesDifference / 60);
+    const diffMinutes = totalMinutesDifference % 60;
+
+    // show result 
+    const result = diffHours >= 0 ? hourDifference.innerText = `${arrPartTwo} is ${diffHours} hours ahead of ${depPartTwo}!`
+    : `${arrPartTwo} is ${diffHours}hours behind of ${depPartTwo}!`
     })
 }
