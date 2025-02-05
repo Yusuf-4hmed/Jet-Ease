@@ -1,7 +1,7 @@
 <h3 align="center">Jet Ease ✈️</h3>
 
   <p align="center">
-    Web app that allows users to generate a "gradual sleep shift" routine that allows them to avoid / reduce affects of jet lag.
+    Web app that provides users with tools for their travel
     <br />
   </p>
 </div>
