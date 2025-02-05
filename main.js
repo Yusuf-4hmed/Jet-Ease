@@ -208,7 +208,7 @@ const timeDifference = () => {
     .then(res => res.json())
     .then(data => {
         depTimeLive = data.time;
-        console.log(`live time in deparuture country: ${depTimeLive}`)
+        console.log(`live time in departure country: ${depTimeLive}`)
     })
     let timeDifference;
     let arrTimeLive;
