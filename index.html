@@ -11,12 +11,17 @@
     </style>
 </head>
 <body>
+    <div class="title">
+        <img src="/assets/airplane_2708-fe0f.png" alt="plane">
+        <h1>Jet Ease</h1>
+    </div>
+    <p class="slogan">Smarter Tools, Smoother Journeys.</p>
 <div class="loading-screen" id="loading-screen">
     <div class="main-header">please wait a moment..</div>
 </div>
 <div class="main-information-container" id="main-information-form-container">
         <p class="main-header">Please enter your flight information</p>
-    <form class="main-information-form" id="main-information-form">
+    <div class="main-information-form" id="main-information-form">
         <div class="secondary-container">
             <p class="main-information-form-header">Departure city</p>
                 <input type="text" name="departure-country-search" class="country-search" id="departure-country-search" placeholder="city of departure..">
@@ -42,10 +47,10 @@
                 <p class="colon">:</p>
                 <input type="number" name="arrival-time-mm" class="arrival-time" id="arrival-time-mm" min="0" max="59" placeholder="MM">
             </div>
-        </div>
-    </form>
-        <button id="travel-time-button" class="travel-time-button" onclick="zoneChange()">Get results</button>
+            <button id="travel-time-button" class="travel-time-button" onclick="zoneChange()">Get results</button>
         <p class="error-msg" id="error-msg"></p>
+        </div>
+    </div>
 </div>
 
 <div class="tools-container" id="tools-container">
@@ -65,7 +70,7 @@
         
     </div>
 
-        <p class="tools-text-description">To best adjust your sleep schedule to avoid jet lag, its reccomended that you sleep at your destination's time zone for about a week.</p>
+        <p class="tools-text-description">To best adjust your sleep schedule to avoid jet lag, its reccomended that you sleep at your destination's time zone for about a week. (You can practice sleeping 1 hour earlier / later everyday until you match up with your arrival city)</p>
     </div>
     
 </div>
