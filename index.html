@@ -32,8 +32,11 @@
             <div class="country-time">
                     <input type="number" name="departure-time-hh" class="departure-time" id="departure-time-hh" min="0" max="23" placeholder="HH">
                     <p class="colon">:</p>
-                    <input type="number" name="departure-time-mm" class="departure-time" id="departure-time-mm" min="0" max="59" placeholder="MM">
+                    <input type="number" name="departure-time-mm" class="departure-time" id="departure-time-mm" min="0" max="59" placeholder="MM">  
             </div>
+            <button class="help-button" id="help-button" data-tooltip="Help" onclick="toggleHelpContainer()">
+                <ion-icon name="help-circle-outline"></ion-icon>
+            </button>
         </div>
         <div class="secondary-container">
             <p class="main-information-form-header">Arrival city</p>
@@ -51,6 +54,26 @@
         <p class="error-msg" id="error-msg"></p>
         </div>
     </div>
+    
+</div>
+
+<div class="help-container" id="help-container">
+    <button class="exit-help" onclick="toggleHelpContainer()">
+        <ion-icon name="close-outline"></ion-icon>
+    </button>
+    <div class="help-information">
+        <div class="tools-header">Where to get this infomation</div>
+    <div class="tools-text">To use the tools on Jet Ease, you'll need the following details for your flight:
+        <ul>
+            <li><b>Departure City:</b>  This is the city where your flight starts. You can usually find this information on your flight itinerary or booking confirmation under the "From" section.</li>
+            <li><b>Departure Time:</b> This is the time when your flight takes off. Look for the scheduled departure time on your flight ticket or itinerary.</li>
+            <li><b>Arrival City:</b> This is the city where your flight lands. You'll find this in the "To" section of your flight details.</li>
+            <li><b>Arrival Time:</b> This is the time when your flight is expected to land. It will be listed on your itinerary or booking confirmation.</li>
+        </ul>
+    </div>
+    <div class="tools-text-description">If you're on a connecting flight, you’ll need to enter the departure city and time from your first flight, and the arrival city and time from your last flight to ensure the correct calculations.</div>
+    </div>
+    
 </div>
 
 <div class="tools-container" id="tools-container">
@@ -60,23 +83,32 @@
         <p class="tools-text-description">The total time from taking off to landing in your destination. Not neccessarily the time in the air (you may have a connect flight so this total time includes stop overs)</p>
     </div>
     <div class="sleep-schedule">
-        <p class="tools-header">Gradual Sleep Shift</p>
+        <p class="tools-header">Time Difference</p>
     <div class="sleep-time-main-container">
         <div class="sleep-time-container">
             <p class="tools-text" id="hour-difference">0 hours</p>
-                
         </div>
-        
-        
     </div>
 
-        <p class="tools-text-description">To best adjust your sleep schedule to avoid jet lag, its reccomended that you sleep at your destination's time zone for about a week. (You can practice sleeping 1 hour earlier / later everyday until you match up with your arrival city)</p>
+        <p class="tools-text-description">This section displays the time difference between your departure and arrival cities. Quickly check how much the time zones differ to help you adjust your schedule accordingly.</p>
+    </div>
+    <div class="gradual-sleep-routine">
+        <div class="tools-header">Gradual Sleep Routine</div>
+        <p class="tools-text" id="sleep-routine-text">0 days before your trip you should begin adjusting your sleep schedule by 1 hour</p>
+        <div class="sleep-routine-container" id="sleep-routine-container">
+            <!-- <div class="sleep-routine-day"></div> -->
+        
+        </div>
+        <p class="tools-text-description">Based on the information you’ve provided, we’ve created a personalized sleep routine to help you adjust to your new time zone. Follow the suggested schedule to gradually shift your sleep pattern and reduce jet lag during your trip</p>
     </div>
     
 </div>
     
 
-    
-</body>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="main.js"></script>
+</body>
+
 </html>

@@ -153,7 +153,7 @@ if (allInputsHaveValue){
 }) 
     console.log("departure time " + departureTime);
 // removes the error text as the function has gone through as intended
-    errorMsg.innerText = ``
+    errorMsg.innerText = `Please wait..`
 
 
 // now that the arrival time has been matched to the time zone of the departure time
@@ -185,6 +185,7 @@ const calculateFlightDuration = (departureTime, arrivalTimeConverted) => {
     
     // show tool container
     toolsContainer.style.opacity = "1"
+    errorMsg.innerText = " "
 }
 
 } else {
@@ -246,6 +247,44 @@ const timeDifference = () => {
 
     // show result 
     const result = diffHours >= 0 ? hourDifference.innerText = `${arrPartTwo} is ${diffHours} hours ahead of ${depPartTwo}!`
-    : `${arrPartTwo} is ${diffHours}hours behind of ${depPartTwo}!`
+    : `${arrPartTwo} is ${diffHours}hours behind of ${depPartTwo}!`;
+
+    toolHourDifference = diffHours;
+    gradualSleepRoutine();
     })
+
+}
+
+// storing the hour difference for other tools
+let toolHourDifference
+
+// HELP BUTTON 
+
+const helpButton = document.getElementById("help-button")
+const helpContainer = document.getElementById("help-container")
+const mainInformationContainer = document.getElementById("main-information-form-container")
+
+toggleHelpContainer = () => {
+    if (mainInformationContainer.style.display === "") {
+        mainInformationContainer.style.display = "none";
+        helpContainer.style.display = "block"
+    } else {
+        mainInformationContainer.style.display = "";
+        helpContainer.style.display = "none";
+    }
+}
+
+
+// GRADUAL SLEEP ROUTINE
+
+const sleepRoutineText = document.getElementById("sleep-routine-text");
+const sleepRoutineContainer = document.getElementById("sleep-routine-container");
+
+const gradualSleepRoutine = () => {
+    sleepRoutineText.innerHTML =  `${toolHourDifference} days before your trip you should begin adjusting your sleep schedule by 1 hour`;
+    for (let i = 0; i < toolHourDifference; i++) {
+        sleepRoutineContainer.innerHTML += `<div class="sleep-routine-day">day ${ i + 1}</div>`
+    }
+    
+    console.log(toolHourDifference)
 }

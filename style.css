@@ -6,6 +6,12 @@ html{
     background-color: black;
 }
 
+
+ion-icon {
+    color: white;
+    font-size: 23px;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -42,6 +48,7 @@ input::-webkit-inner-spin-button {
 /* MAIN INFORMATION CONTAINER */
 
 .main-information-container {
+    position: relative;
     margin-top: 10px;
     border: 1px solid rgba(255, 255, 255, 0.116);
     background-color: rgba(15, 16, 26, 0.452);
@@ -50,7 +57,6 @@ input::-webkit-inner-spin-button {
     border-radius: 14px;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 .main-information-form {
@@ -182,6 +188,41 @@ input::-webkit-inner-spin-button {
     margin: 0px;
 }
 
+/* HELP CONTAINER */
+
+.help-container {
+    display: none;
+    border: 1px solid rgba(255, 255, 255, 0.116);
+    background-color: rgba(15, 16, 26, 0.452);
+    max-width: 700px;
+    min-height: 400px;
+    border-radius: 14px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.help-information {
+    padding: 40px;
+}
+
+.help-information li {
+    font-size: 14px;
+    text-align: left;
+}
+
+.exit-help {
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+    float: left;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.267);
+    margin: 10px 10px;
+    cursor: pointer;
+    padding: 3px 0px 0px 0px;
+    position: relative;
+}
+
 /* TOOLS CONTAINER */
 
 .tools-container {
@@ -248,11 +289,57 @@ input::-webkit-inner-spin-button {
     border: none;
 }
 
+.help-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+    float: left;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.267);
+    margin: 10px 3px;
+    cursor: pointer;
+    padding: 3px 0px 0px 0px;
+    position: relative;
+}
+
+.help-button::after
+ {
+
+    position: absolute;
+    top: -40px;
+    left: -20%;
+    background: white;
+    transform: translateX(-50%), translateY(-100%);
+}
+
+.help-button:hover::after {
+    content: attr(data-tooltip);
+    padding: .5rem;
+    width: max-content;
+    width: 100%;
+    border-radius: 3px;
+}
+
+.help-button:hover::before {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    left: 35%;
+    transform: translateX(50%);
+    transform: rotate(140deg);
+    top: -14px;
+}
+
+
+
 .error-msg {
     color: white;
     text-align: center;
     font-size: 10px;
 }
+
 
 .sleep-schedule {
     width: 61%;
@@ -275,6 +362,7 @@ input::-webkit-inner-spin-button {
 
 .sleep-time-container {
     padding:  0px 10px;
+    display: flex;
 }
 
 .sleep-time-container .tools-text {
@@ -294,6 +382,30 @@ input::-webkit-inner-spin-button {
     border: 1px solid rgba(255, 255, 255, 0.116);
     border-radius: 10px;
     color: white;
+}
+
+.gradual-sleep-routine {
+    margin: 2% 0px 0px;
+    width: 100%;
+    
+    border: 1px solid rgba(255, 255, 255, 0.116);
+    background-color: rgba(15, 16, 26, 0.452);
+    max-width: 700px;
+    min-height: 100%;
+    border-radius: 14px;
+}
+
+.sleep-routine-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.sleep-routine-day {
+    background: rgb(165, 165, 255);
+    width: 40px;
+    height: 60px;
+    border-radius: 7px;
 }
 
 /* LOADING SCREEN */
