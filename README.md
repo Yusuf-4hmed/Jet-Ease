@@ -8,6 +8,10 @@
 
 <a href="https://yusuf-4hmed.github.io/Jet-Ease/" target="_blank">Site Link</a>
 
+### How To Use:
+
+- Please use REAL flights to get accurate information, if you do not have a flight you can test out some from here: <a href="https://www.google.com/travel/flights/search?tfs=CBwQAhopEgoyMDI1LTA1LTExagwIAhIIL20vMDRqcGxyDQgCEgkvbS8wMl8yODYaKRIKMjAyNS0wNS0xOWoNCAISCS9tLzAyXzI4NnIMCAISCC9tLzA0anBsQAFIAXABggELCP___________wGYAQE&tfu=CmhDalJJWVhocWNteGlWVk4zVjJkQlJsbHhSbEZDUnkwdExTMHRMUzB0TFhkaVltUnBOa0ZCUVVGQlIyWlZkbE4zVDJWM1gxRkJFZ0l5TXhvTENJeUxBaEFDR2dOSFFsQTRLWERhMlFJPQ" target="_blank">Flights from Google</a>
+
 Big plans for this site in the future :)
 
 Some things I am planning to add:
